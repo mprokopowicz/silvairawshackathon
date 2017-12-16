@@ -7,6 +7,7 @@ const path = require('path');
 
 const handler = (req, res) => {
   console.log(`Got request!`);
+  res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
   fs.createReadStream(path.join(__dirname, 'index.html')).pipe(res);
 };
 
